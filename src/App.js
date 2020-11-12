@@ -1,15 +1,19 @@
-import { Layout, Typography, Menu, Icon, } from "antd"
+import { Layout, Typography, Menu, Icon, Alert } from "antd"
 import Avatar from "antd/lib/avatar/avatar";
 import './App.css';
 import React from "react"
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import version from './components/version.js';
-import dailyList from './components/dayliList.js'
+import version from './pages/version.js';
+import dailyList from './pages/dayliList.js'
 
-const { Header, Footer, Sider, Content } = Layout;
+
+const { Header, Sider, Content } = Layout;
 const { Title } = Typography;
 const { SubMenu,} = Menu;
 
+function refreshPage(){ 
+  window.location.reload(); 
+}
 
 function App() {
   return (
@@ -18,7 +22,7 @@ function App() {
         <Layout>
         <Header style={{padding:10}}>
           <Avatar style={{float:'right'}} src='./avatarglobo.png'></Avatar>
-          <Title style={{color:'white'}} level={3}> Daily List</Title>
+          <Title style={{color:'white'}} level={3}><b>Fast Note</b></Title>
         </Header>
         <Layout>
       <Sider >
@@ -28,8 +32,8 @@ function App() {
         mode="inline"
          >
            
-          <Menu.Item >
-            <Link to="/"><b>Daily List</b></Link>
+          <Menu.Item onClick={ refreshPage }>
+            <Link to="/"><b>Fast Note</b></Link>
           </Menu.Item>
           
           <SubMenu       
@@ -41,7 +45,7 @@ function App() {
             </span>
         }>
             <Menu.ItemGroup key='Sobre'title= 'Sobre'>
-            <Menu.Item key='Version'><Link to="/version"></Link>Versão</Menu.Item>
+            <Menu.Item onClick={ refreshPage } ><Link to="/version"></Link>Versão</Menu.Item>
             <Menu.Item key='Code GitHub'>Code GitHub <a href="https://github.com/guilhermebernal/projeto-lista.git"/> </Menu.Item>
             </Menu.ItemGroup>
           </SubMenu>
