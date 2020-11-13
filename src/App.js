@@ -1,5 +1,4 @@
-import { Layout, Typography, Menu, Icon, Alert } from "antd"
-import Avatar from "antd/lib/avatar/avatar";
+import { Layout, Typography, Menu, Icon, Avatar } from "antd"
 import './App.css';
 import React from "react"
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
