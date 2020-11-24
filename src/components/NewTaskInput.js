@@ -1,4 +1,4 @@
-import React, { useState, render } from "react";
+import React, { useState } from "react";
 import { Button, Input } from "antd";
 
 
@@ -24,7 +24,7 @@ function setNewTask({ target }) {
           onChange={setNewTask}
           style={{ height: 30 }}
         />
-        <Button  oncltype="dashed" block  htmlType="submit">
+        <Button oncltype="dashed" block  htmlType="submit">
           <b>Adicionar</b>
         </Button>
         
