@@ -1,0 +1,40 @@
+form {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  form button {
+    border: none;
+    padding: 8px;
+    outline: none;
+    background: #1890ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    height: 65px;
+  }
+  
+  .input-container label {
+    margin-bottom: 10px; 
+  }
+  
+  .input-container input, select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #1890ff;
+    border-radius: 4px;
+    outline: none;
+    background: transparent;
+  }
+  
+  .feedback {
+    color: red;
+  }

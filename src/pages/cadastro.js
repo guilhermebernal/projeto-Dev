@@ -1,21 +1,22 @@
 import { Layout, Breadcrumb } from 'antd';
 import React from 'react';
-
-
+import Form from '../components/Form/Form';
 const { Footer, Content } = Layout;
 
-function version() {
+function cadastro() {
   return (
     <div>
       <Layout>
         <Layout>
           <Content style={{ padding: '0 50px 0' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Versão</Breadcrumb.Item>
+              <Breadcrumb.Item>Crud</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ background: '#fff', padding: 24, minHeight: 797 }}>
 
-              <h3>Version: 0.1.0 </h3>
+            
+            <Form/>
+          
 
             </div>
           </Content>
@@ -27,4 +28,4 @@ function version() {
   );
 }
 
-export default version;
+export default cadastro;

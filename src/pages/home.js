@@ -14,7 +14,7 @@ function home() {
             </Breadcrumb>
             <div style={{ background: '#fff', padding: 24, minHeight: 797 }}>
 
-              <h3>Home aqui  </h3>
+            
 
             </div>
           </Content>
