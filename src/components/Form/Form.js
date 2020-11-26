@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import InputMask from 'react-input-mask';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
+import { Input, Select, Button } from 'antd';
 
 import './Form.css';
 
@@ -13,7 +13,7 @@ const pessoaModelo = {
   data_nasc: '',
   sexo: ''
 }
-
+//formato de data
 const datePattern = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/;
 
 
@@ -39,7 +39,7 @@ const Form = () => {
     const carregarPessoa = async () => {     
       if (id) {
         try {
-          const response = await fetch('http://localhost:3333/pessoas/' + id);
+          const response = await fetch('http://localhost:3000/pessoas/' + id);
           const dados = await response.json();
           
           console.log(response);
@@ -59,7 +59,7 @@ const Form = () => {
 
   const formSubmit = async (data) => {
     try {
-      const url = `http://localhost:3333/pessoas/${id || ''}`
+      const url = `http://localhost:3000/pessoas/${id || ''}`
 
       await fetch(url, {
           method: !id ? 'POST' : 'PUT',
@@ -69,8 +69,8 @@ const Form = () => {
           },
           body: JSON.stringify(data),
         });
-
-      location.push('/');
+        // quando clicar em salvar ele vai direto para pagina pesquisa 
+      location.push('/pesquisa');
     } catch(error) {
       const mensagem = !id ? 'Erro ao criar uma pessoa' : 'Erro ao alterar a pessoa';
       setErroSalvarPessoa(mensagem);
@@ -82,7 +82,7 @@ const Form = () => {
       ? (
         <>
         <h1>{erroCarregamento}</h1>
-        <button type="button" onClick={() => { location.push('/pesquisa') }}>Voltar</button>
+        <Button type="dashed" onClick={() => { location.push('/pesquisa') }}>Voltar</Button>
         </>
       ) 
       : (
@@ -100,7 +100,7 @@ const Form = () => {
             {erroSalvarPessoa && (<h2>{erroSalvarPessoa}</h2>)}
             <div class="input-container">
               <label htmlFor="nome">Nome</label>
-              <input 
+              <Input  
                 type="text" 
                 id="nome" 
                 value={props.values.nome}
@@ -115,7 +115,7 @@ const Form = () => {
             </div>
             <div class="input-container">
               <label htmlFor="cpf">CPF</label>
-              <InputMask 
+              <Input 
                 id="cpf" 
                 type="text" 
                 mask="999.999.999-99" 
@@ -131,7 +131,7 @@ const Form = () => {
             </div>
             <div class="input-container">
               <label htmlFor="rg">RG</label>
-              <InputMask 
+              <Input 
                 id="rg" 
                 type="text" 
                 mask="99.999.999-9" 
@@ -146,7 +146,7 @@ const Form = () => {
             </div>
             <div class="input-container">
               <label htmlFor="data_nasc">Data Nascimento</label>
-              <InputMask 
+              <Input 
                 id="data_nasc" 
                 type="text" 
                 mask="99/99/9999" 
@@ -162,7 +162,7 @@ const Form = () => {
             </div>
             <div class="input-container">
               <label htmlFor="sexo">Sexo</label>
-              <select id="sexo" 
+              <Select id="sexo" 
                 value={props.values.sexo}
                 onChange={props.handleChange}
                 onBlur={props.handleBlur}
@@ -170,15 +170,15 @@ const Form = () => {
                 {!id && (<option value=""></option>)}
                 <option value="Feminino">Feminino</option>
                 <option value="Masculino">Masculino</option>
-              </select>
+              </Select>
               {
                 props.errors.sexo && 
                 props.getFieldMeta('sexo').touched && 
                 <small className="feedback">{props.errors.sexo}</small>
               }
             </div>
-            <button type="submit">Salvar</button>
-            <button type="button" onClick={() => { location.push('/cadastro') }}>Cancelar</button>
+            <Button type="default">Salvar</Button>
+            <Button type="danger" onClick={() => { location.push('/pesquisa') }}>Cancelar</Button>
           </form >)}}
       </Formik>
       )   
