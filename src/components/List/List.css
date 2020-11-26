@@ -3,7 +3,6 @@
   margin: 0 auto;
   margin-top: 30px;
   padding: 0 20px;
-
   display: flex;
   flex-direction: column;
 }
@@ -12,57 +11,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-.list-container button {
-  border: none;
-  padding: 8px;
-  outline: none;
-  background: #1890ff;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 4px;
-}
+
 
 .input-search {
   padding: 10px 6px;
-  font-size: 20px;
+  font-size: 15px;
   width: 100%;
-
-  border: 1px solid #1890ff;
-  border-radius: 12px;
   outline: none;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .person-table {
   width: 100%;
-  border-collapse: collapse;
+  
+
 }
 
 .person-table thead th {
-  padding: 10px 5px;
-  background: #1890ff;
   text-align: left;
+  border-bottom: 1px solid gray;
 }
 
-.person-table thead th:first-child {
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-}
 .person-table thead th:last-child {
   text-align: right;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  
 }
 
 .person-table tbody td {
   padding: 10px 0;
-  border-bottom: 1px solid #1890ff;
+  border-bottom: 1px solid gray;
 }
 
 .person-table tbody .list-row-action {
@@ -81,5 +63,5 @@
 
 .person-count {
   padding: 10px 0;
-  font-size: 24px;
+  font-size: 15px;
 }

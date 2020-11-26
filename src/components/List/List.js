@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './List.css';
+import { Input, Button } from 'antd';
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
     const carregarPessoas = async () => {
       try {
         setCarregando(true);
-        const response = await fetch('http://localhost:3333/pessoas');
+        const response = await fetch('http://localhost:3000/pessoas');
         const dados = await response.json()
 
         setPessoas(dados);
@@ -48,7 +49,7 @@ function App() {
     }
 
     try{
-      const url = 'http://localhost:3333/pessoas/' + id;
+      const url = 'http://localhost:3000/pessoas/' + id;
 
       await fetch(url, {
         method: 'DELETE',
@@ -73,16 +74,16 @@ function App() {
         : (
           <>
             <div className="list-controls-container">
-              <input
+              <Input
                 className="input-search"
                 type="text"
-                placeholder="Informe o nome ou o CPF (999.999.999-99)"
+                placeholder="Pesquisar por Nome ou CPF "
                 onChange={(event) => {
                   setTermoBusca(event.target.value);
                 }}
                 value={termoBusca}
               />
-              <button type="button" onClick={() => location.push('/cadastro')}>Adicionar</button>
+              <Button type="default" onClick={() => location.push('/cadastro')}>Adicionar</Button>
             </div>
 
             {erroExclusao && (<h1>Problema ao remover uma pessoa</h1>)}
@@ -91,7 +92,7 @@ function App() {
               ? (<h1>Problema ao carregar as pessoas do banco de dados</h1>)
               : (
               <>
-              <div className="person-count">Total de pessoas: {pessoasFiltradas.length}</div>
+              <div className="person-count">Total de cadastros: {pessoasFiltradas.length}</div>
               <table className="person-table">
                 <thead>
                   <tr>
@@ -117,15 +118,15 @@ function App() {
                           <td>{pessoa.data_nasc}</td>
                           <td>{pessoa.sexo}</td>
                           <td className="list-row-action">
-                            <button type="button" onClick={() => {
-                              location.push('/form/' + pessoa.id)
-                            }}>Alterar</button>
-                            <button type="button" onClick={() => {
+                            <Button type="default" onClick={() => {
+                              location.push('/cadastro/' + pessoa.id)
+                            }}>Alterar</Button>
+                            <Button type="danger" onClick={() => {
                               removerPessoa(pessoa.id)
                             }}
                             >
                               Remover
-                            </button>
+                            </Button>
                           </td>
                         </tr>
                       )
