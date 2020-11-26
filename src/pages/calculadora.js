@@ -3,18 +3,18 @@ import React from 'react';
 
 const { Footer, Content } = Layout;
 
-function crud() {
+function calculadora() {
   return (
     <div>
       <Layout>
         <Layout>
           <Content style={{ padding: '0 50px 0' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Crud</Breadcrumb.Item>
+              <Breadcrumb.Item>Calculadora</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ background: '#fff', padding: 24, minHeight: 797 }}>
 
-              <h3>Crud aqui </h3>
+              <h3>Calculadora aqui </h3>
 
             </div>
           </Content>
@@ -26,4 +26,4 @@ function crud() {
   );
 }
 
-export default crud;
+export default calculadora;

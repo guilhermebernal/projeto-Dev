@@ -1,0 +1,85 @@
+.list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.list-controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.list-container button {
+  border: none;
+  padding: 8px;
+  outline: none;
+  background: #1890ff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.input-search {
+  padding: 10px 6px;
+  font-size: 20px;
+  width: 100%;
+
+  border: 1px solid #1890ff;
+  border-radius: 12px;
+  outline: none;
+  margin-right: 10px;
+}
+
+.person-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.person-table thead th {
+  padding: 10px 5px;
+  background: #1890ff;
+  text-align: left;
+}
+
+.person-table thead th:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.person-table thead th:last-child {
+  text-align: right;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.person-table tbody td {
+  padding: 10px 0;
+  border-bottom: 1px solid #1890ff;
+}
+
+.person-table tbody .list-row-action {
+  text-align: right;
+}
+
+.person-table tbody .not-found {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.person-table tbody td button + button {
+  margin-left: 5px;
+}
+
+.person-count {
+  padding: 10px 0;
+  font-size: 24px;
+}

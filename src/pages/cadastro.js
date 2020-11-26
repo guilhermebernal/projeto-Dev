@@ -1,9 +1,9 @@
 import { Layout, Breadcrumb } from 'antd';
 import React from 'react';
-
+import Form from '../components/Form/Form';
 const { Footer, Content } = Layout;
 
-function calculator() {
+function cadastro() {
   return (
     <div>
       <Layout>
@@ -14,7 +14,9 @@ function calculator() {
             </Breadcrumb>
             <div style={{ background: '#fff', padding: 24, minHeight: 797 }}>
 
-              <h3>Crud aqui </h3>
+            
+            <Form/>
+          
 
             </div>
           </Content>
@@ -26,4 +28,4 @@ function calculator() {
   );
 }
 
-export default calculator;
+export default cadastro;

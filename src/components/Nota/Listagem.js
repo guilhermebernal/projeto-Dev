@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./App.css";
-import Tarefa from "./components/Tarefa";
-import NewTaskInput from "./components/NewTaskInput";
+import Tarefa from "./Tarefa";
+import NewTaskInput from "./NewTaskInput";
+
                                                         
 const Listagem = () => {
   const [tasks, setTasks] = useState([]);
