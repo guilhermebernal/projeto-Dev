@@ -7,7 +7,6 @@ import dayliList from "./pages/dayliList.js";
 import home from "./pages/home";
 import calculadora from "./pages/calculadora";
 import pesquisa from "./pages/pesquisa";
-import Form from './components/Form/Form';
 import cadastro from "./pages/cadastro";
 import pagCalendario from "./pages/pagCalendario";
 
@@ -93,9 +92,8 @@ function App() {
       <Router>
         <Switch>
       <Route exact path="/" component={home} />
-      <Route exact path="/form" component={Form} />
-      <Route path="/form/:id" component={Form} />
-      <Route path="/cadastro" component={cadastro} />
+      <Route exact path="/cadastro" component={cadastro} />
+      <Route path="/cadastro/:id" component={cadastro} />
       <Route path="/pesquisa" component={pesquisa} />
       <Route path="/version" component={version} />
       <Route path="/note" component={dayliList} />
