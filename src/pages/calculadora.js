@@ -1,6 +1,7 @@
 import { Layout, Breadcrumb } from 'antd';
 import React from 'react';
 
+
 const { Footer, Content } = Layout;
 
 function calculadora() {
@@ -14,7 +15,7 @@ function calculadora() {
             </Breadcrumb>
             <div style={{ background: '#fff', padding: 24, minHeight: 797 }}>
 
-              <h3>Calculadora aqui </h3>
+         
 
             </div>
           </Content>

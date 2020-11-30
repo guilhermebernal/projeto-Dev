@@ -20,11 +20,12 @@ function setNewTask({ target }) {
       <form onSubmit={submit}>
         <TextArea
           className="Todo-input"
-          placeholder="Your Fast Note"
+          placeholder="Nota Rápida"
           onChange={setNewTask}
-          style={{ height: 30 }}
+          style={{ height: 400,width: 1500}}
+          
         />
-        <Button oncltype="dashed" block  htmlType="submit">
+        <Button type="primary" block  htmlType="submit">
           <b>Adicionar</b>
         </Button>
         

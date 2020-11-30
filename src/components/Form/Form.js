@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { Input, Select, Button } from 'antd';
-
+import { Input, Button } from 'antd';
 import './Form.css';
+
 
 const pessoaModelo = {
   nome: '',
@@ -82,7 +82,7 @@ const Form = () => {
       ? (
         <>
         <h1>{erroCarregamento}</h1>
-        <Button type="dashed" onClick={() => { location.push('/pesquisa') }}>Voltar</Button>
+        <button type="submit" onClick={() => { location.push('/pesquisa') }}>Voltar</button>
         </>
       ) 
       : (
@@ -117,8 +117,7 @@ const Form = () => {
               <label htmlFor="cpf">CPF</label>
               <Input 
                 id="cpf" 
-                type="text" 
-                mask="999.999.999-99" 
+                type="text"  
                 value={props.values.cpf}
                 onChange={props.handleChange}
                 onBlur={props.handleBlur}
@@ -162,7 +161,7 @@ const Form = () => {
             </div>
             <div class="input-container">
               <label htmlFor="sexo">Sexo</label>
-              <Select id="sexo" 
+              <select id="sexo" 
                 value={props.values.sexo}
                 onChange={props.handleChange}
                 onBlur={props.handleBlur}
@@ -170,14 +169,14 @@ const Form = () => {
                 {!id && (<option value=""></option>)}
                 <option value="Feminino">Feminino</option>
                 <option value="Masculino">Masculino</option>
-              </Select>
+              </select>
               {
                 props.errors.sexo && 
                 props.getFieldMeta('sexo').touched && 
                 <small className="feedback">{props.errors.sexo}</small>
               }
             </div>
-            <Button type="default">Salvar</Button>
+            <Button htmlType="submit" type="primary">Salvar</Button>
             <Button type="danger" onClick={() => { location.push('/pesquisa') }}>Cancelar</Button>
           </form >)}}
       </Formik>

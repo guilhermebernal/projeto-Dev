@@ -83,7 +83,7 @@ function App() {
                 }}
                 value={termoBusca}
               />
-              <Button type="default" onClick={() => location.push('/cadastro')}>Adicionar</Button>
+              <Button type="primary" onClick={() => location.push('/cadastro')}>Adicionar</Button>
             </div>
 
             {erroExclusao && (<h1>Problema ao remover uma pessoa</h1>)}
@@ -118,7 +118,7 @@ function App() {
                           <td>{pessoa.data_nasc}</td>
                           <td>{pessoa.sexo}</td>
                           <td className="list-row-action">
-                            <Button type="default" onClick={() => {
+                            <Button type="primary" onClick={() => {
                               location.push('/cadastro/' + pessoa.id)
                             }}>Alterar</Button>
                             <Button type="danger" onClick={() => {

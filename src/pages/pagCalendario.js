@@ -1,9 +1,14 @@
 import { Layout, Breadcrumb } from 'antd';
 import React from 'react';
+import "antd/dist/antd.css";
+import { Calendar } from "antd";
+
 
 const { Footer, Content } = Layout;
 
-function pagCalendario() {
+function pagCalendario(value, mode) {
+  console.log(value, mode);
+  
   return (
     <div>
       <Layout>
@@ -14,8 +19,10 @@ function pagCalendario() {
             </Breadcrumb>
             <div style={{ background: '#fff', padding: 24, minHeight: 797 }}>
 
-            <h3>Calendario aqui</h3>
-            </div>
+            <Calendar pagCalendario={pagCalendario} />
+
+           
+          </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>©2020 Created by Guilherme Bernal</Footer>
 

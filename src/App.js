@@ -1,4 +1,4 @@
-import { Layout, Typography, Menu, Icon, Avatar } from "antd"
+import { Layout, Typography, Menu, Avatar, Button } from "antd"
 import './App.css';
 import React from "react"
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
@@ -9,6 +9,7 @@ import calculadora from "./pages/calculadora";
 import pesquisa from "./pages/pesquisa";
 import cadastro from "./pages/cadastro";
 import pagCalendario from "./pages/pagCalendario";
+
 
 
 
@@ -38,20 +39,20 @@ function App() {
          >
            
           <Menu.Item onClick={ refreshPage }>
-            <Link to="/"><Icon type="home"/>Home</Link>
+            <Link to="/"><icon type="home"/>Home</Link>
           </Menu.Item>
 
           <SubMenu       
           
           title={ 
            <span>
-             <Icon type="book" />
+             <icon type="book" />
              <span>Crud</span>
            </span>
        }>
            <Menu.ItemGroup key='crud'title= 'Crud'>
-           <Menu.Item onClick={ refreshPage }><Link to="cadastro"></Link><Icon type="audit"/>Cadastro</Menu.Item>
-           <Menu.Item onClick={ refreshPage }><Link to="pesquisa"></Link><Icon type="search"/>Pesquisa</Menu.Item>
+           <Menu.Item onClick={ refreshPage }><Link to="cadastro"></Link><icon type="audit"/>Cadastro</Menu.Item>
+           <Menu.Item onClick={ refreshPage }><Link to="pesquisa"></Link><icon type="search"/>Pesquisa</Menu.Item>
            </Menu.ItemGroup>
          </SubMenu>
 
@@ -59,14 +60,14 @@ function App() {
           
           title={ 
            <span>
-             <Icon type="laptop" />
+             <icon type="laptop" />
              <span>Utilitários</span>
            </span>
        }>
            <Menu.ItemGroup key='ferramentas'title= 'Ferramentas'>
-           <Menu.Item onClick={ refreshPage }><Link to="calculadora"></Link><Icon type="calculator"/>Calculadora</Menu.Item>
-           <Menu.Item onClick={ refreshPage }><Link to="pagCalendario"></Link><Icon type="calendar"/>Calendário</Menu.Item>
-           <Menu.Item onClick={ refreshPage }><Link to="dayliList"></Link><Icon type="snippets"/>Nota Rápida</Menu.Item>
+           <Menu.Item onClick={ refreshPage }><Link to="calculadora"></Link><icon type="calculator"/>Calculadora</Menu.Item>
+           <Menu.Item onClick={ refreshPage }><Link to="pagCalendario"></Link><icon type="calendar"/>Calendário</Menu.Item>
+           <Menu.Item onClick={ refreshPage }><Link to="dayliList"></Link><icon type="snippets"/>Nota Rápida</Menu.Item>
            </Menu.ItemGroup>
          </SubMenu>
           
@@ -74,13 +75,13 @@ function App() {
           
            title={ 
             <span>
-              <Icon type="info" />
+              <icon type="info" />
               <span>Sobre</span>
             </span>
         }>
             <Menu.ItemGroup key='Sobre'title= 'Informações'>
-            <Menu.Item onClick={ refreshPage } ><Link to="/version"></Link><Icon type="fire"/>Versão</Menu.Item>
-            <Menu.Item key='GitHub'><Icon type="github"/>GitHub <a href="https://github.com/guilhermebernal/projeto-lista.git"/> </Menu.Item>
+            <Menu.Item onClick={ refreshPage } ><Link to="/version"></Link><icon type="fire"/>Versão</Menu.Item>
+            <Menu.Item key='GitHub'><icon type="github"/>GitHub <a href="https://github.com/guilhermebernal/projeto-lista.git"/> </Menu.Item>
             </Menu.ItemGroup>
           </SubMenu>
         </Menu>
@@ -100,6 +101,7 @@ function App() {
       <Route path="/calculadora" component={calculadora} />
       <Route path="/pagCalendario" component={pagCalendario} />
       <Route path="/dayliList" component={dayliList} />
+     
 
       </Switch>
       </Router>
